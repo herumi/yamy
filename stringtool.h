@@ -12,7 +12,7 @@
 #  include <iosfwd>
 #  include <fstream>
 #  include <locale>
-#  include <boost/regex.hpp>
+#  include <regex>
 #  include <stdio.h>				// for snprintf
 
 
@@ -30,10 +30,62 @@ typedef std::basic_stringstream<_TCHAR> tstringstream;
 typedef std::basic_ifstream<_TCHAR> tifstream;
 /// ofstream for generic international text
 typedef std::basic_ofstream<_TCHAR> tofstream;
-/// basic_regex for generic international text
-typedef boost::basic_regex<_TCHAR> tregex;
 /// match_results for generic international text
-typedef boost::match_results<tstring::const_iterator> tsmatch;
+typedef std::match_results<tstring::const_iterator> tsmatch;
+
+/// basic_regex wrapper for generic international text.
+/** std::basic_regex does not retain the original pattern string, while the
+	old boost::basic_regex did (via str()). Several places print a regex
+	through operator<<(), so this wrapper keeps the pattern alongside the
+	compiled std::basic_regex. */
+class tregex
+{
+public:
+	typedef std::regex_constants::syntax_option_type flag_type;
+	/// default syntax (Perl-like ECMAScript); boost called this "normal"
+	static constexpr flag_type normal = std::regex_constants::ECMAScript;
+	/// case insensitive
+	static constexpr flag_type icase = std::regex_constants::icase;
+
+private:
+	tstring m_str;						/// original pattern string
+	std::basic_regex<_TCHAR> m_regex;	/// compiled regex
+
+public:
+	///
+	tregex() { }
+	///
+	tregex(const tstring &i_str, flag_type i_flags = normal)
+		: m_str(i_str), m_regex(i_str, i_flags) { }
+	///
+	tregex(const _TCHAR *i_str, flag_type i_flags = normal)
+		: m_str(i_str), m_regex(i_str, i_flags) { }
+
+	/// (re)compile
+	void assign(const tstring &i_str, flag_type i_flags = normal) {
+		m_str = i_str;
+		m_regex.assign(i_str, i_flags);
+	}
+
+	/// compiled regex
+	const std::basic_regex<_TCHAR> &get() const { return m_regex; }
+	/// original pattern string
+	const tstring &str() const { return m_str; }
+};
+
+/// regex_search wrapper operating on tregex
+inline bool regex_search(const tstring &i_str, tsmatch &o_what,
+						 const tregex &i_regex)
+{
+	return std::regex_search(i_str, o_what, i_regex.get());
+}
+
+/// regex_match wrapper operating on tregex
+inline bool regex_match(const tstring &i_str, tsmatch &o_what,
+						const tregex &i_regex)
+{
+	return std::regex_match(i_str, o_what, i_regex.get());
+}
 
 
 /// string with custom stream output

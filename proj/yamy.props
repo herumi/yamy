@@ -4,8 +4,6 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros">
     <VERSION>"0.03"</VERSION>
-    <BOOST_MAJOR>1_38</BOOST_MAJOR>
-    <BOOST_MINOR>0</BOOST_MINOR>
   </PropertyGroup>
   <PropertyGroup>
     <_ProjectFileVersion>18.0.11909.267</_ProjectFileVersion>
@@ -14,25 +12,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\boost_$(BOOST_MAJOR)_$(BOOST_MINOR);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>VERSION=$(VERSION);LOGNAME="$(USERNAME)";COMPUTERNAME="$(COMPUTERNAME)";_CRT_SECURE_NO_WARNINGS;MAYU64;USE_INI;BOOST_REGEX_NO_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ForcedIncludeFiles>$(MSBuildThisFileDirectory)boost_msvc_shim.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PreprocessorDefinitions>VERSION=$(VERSION);LOGNAME="$(USERNAME)";COMPUTERNAME="$(COMPUTERNAME)";_CRT_SECURE_NO_WARNINGS;MAYU64;USE_INI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-    <Link>
-      <AdditionalLibraryDirectories>ext_lib$(CPUBIT)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <BuildMacro Include="VERSION">
       <Value>$(VERSION)</Value>
-      <EnvironmentVariable>true</EnvironmentVariable>
-    </BuildMacro>
-    <BuildMacro Include="BOOST_MAJOR">
-      <Value>$(BOOST_MAJOR)</Value>
-      <EnvironmentVariable>true</EnvironmentVariable>
-    </BuildMacro>
-    <BuildMacro Include="BOOST_MINOR">
-      <Value>$(BOOST_MINOR)</Value>
       <EnvironmentVariable>true</EnvironmentVariable>
     </BuildMacro>
   </ItemGroup>
