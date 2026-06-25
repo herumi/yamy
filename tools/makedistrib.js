@@ -2,60 +2,57 @@ var files = new Array("yamy.ini", "104.mayu", "109.mayu", "default.mayu", "emacs
 
 var config = WScript.Arguments.Item(0); // "Debug" or "Release"
 var version = WScript.Arguments.Item(1); // x.yz
-if (config == null | version == null) {
-	throw new Error("usage: CScirpt.exe makedistrib.js {Debug | Release} <version>");
+if (config == null || version == null) {
+	throw new Error("usage: CScript.exe makedistrib.js {Debug | Release} <version>");
 }
 
 var targetDir = "..\\" + config + "\\";
 var pkgFile = "yamy-" + version + ".zip";
-
-function ProcessFiles(dir, files, process) {
-    for (var i = 0; i < files.length; i++) {
-	process(dir, files[i]);
-    }
-}
-
-var RemoveFile = function(dir, name) {
-    var path =  dir + name;
-    if (fso.FileExists(path)) {
-	fso.DeleteFile(path);
-    }
-};
 
 var fso = WScript.CreateObject("Scripting.FileSystemObject");
 if (fso == null) {
 	throw new Error("can't create File System Object!");
 }
 
-var shell = WScript.CreateObject("Shell.Application");
-if (fso == null) {
-	throw new Error("can't create Shell Application Object!");
+var shell = WScript.CreateObject("WScript.Shell");
+if (shell == null) {
+	throw new Error("can't create WScript.Shell object!");
 }
 
 if (fso.FolderExists(targetDir) == false) {
-    fso.CreateFolder(targetDir);
+	fso.CreateFolder(targetDir);
 }
 
-RemoveFile(targetDir, pkgFile);
+// resolve absolute paths before changing the current directory.
+var absTargetDir = fso.GetAbsolutePathName(targetDir);
+var absPkgPath = fso.BuildPath(absTargetDir, pkgFile);
 
-var file = fso.CreateTextFile(targetDir + pkgFile, true);
-file.Write("PK\x05\x06\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00");
-file.Close();
+// remove the old package if any.
+if (fso.FileExists(absPkgPath)) {
+	fso.DeleteFile(absPkgPath);
+}
 
-var targetZip = shell.NameSpace(fso.GetAbsolutePathName(targetDir + pkgFile));
+// verify all input files exist and build the argument list.
+var args = "";
+for (var i = 0; i < files.length; i++) {
+	var path = fso.BuildPath(absTargetDir, files[i]);
+	if (fso.FileExists(path) == false) {
+		throw new Error("can't pack " + path + "!");
+	}
+	args += " \"" + files[i] + "\"";
+}
 
-var PackFile = function(dir, name) {
-    var path =  dir + name;
-    if (fso.FileExists(path) == false) {
-	RemoveFile(targetDir, pkgFile);
-	throw new Error("can't pack " + path + "!");
-    }
-    var item = shell.NameSpace(fso.GetAbsolutePathName(path) + "\\..\\").ParseName(name);
-    var count = targetZip.Items().Count;
-    targetZip.CopyHere(item);
-    while (targetZip.Items().Count != count + 1) {
-	WScript.Sleep(100);
-    }
-};
+// pack with tar.exe (bundled with Windows 10/11). running from inside the
+// target directory stores entries without a directory prefix. unlike the
+// old Shell.Application/CopyHere approach this works under CScript with no
+// interactive desktop session.
+shell.CurrentDirectory = absTargetDir;
 
-ProcessFiles(targetDir, files, PackFile);
+var cmd = "tar.exe -a -c -f \"" + pkgFile + "\"" + args;
+var rc = shell.Run(cmd, 0, true);
+if (rc != 0) {
+	if (fso.FileExists(absPkgPath)) {
+		fso.DeleteFile(absPkgPath);
+	}
+	throw new Error("tar.exe failed with exit code " + rc + " for " + pkgFile);
+}

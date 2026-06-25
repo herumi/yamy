@@ -825,16 +825,16 @@ private:
 				  localtime(&m_startTime));
 #endif
 
-		Acquire a(&m_log, 0);
-		m_log << _T("------------------------------------------------------------") << std::endl;
-		m_log << loadString(IDS_mayu) << _T(" ") _T(VERSION);
-#ifndef NDEBUG
-		m_log << _T(" (DEBUG)");
-#endif
-#ifdef _UNICODE
-		m_log << _T(" (UNICODE)");
-#endif
-		m_log << std::endl;
+				Acquire a(&m_log, 0);
+				m_log << _T("------------------------------------------------------------") << std::endl;
+				m_log << loadString(IDS_mayu) << _T(" ") _T(VERSION);
+			#ifndef NDEBUG
+				m_log << _T(" (DEBUG)");
+			#endif
+			#ifdef _UNICODE
+				m_log << _T(" (UNICODE)");
+			#endif
+				m_log << std::endl;
 		m_log << _T("  built by ")
 		<< _T(LOGNAME) << _T("@") << toLower(_T(COMPUTERNAME))
 		<< _T(" (") << _T(__DATE__) <<  _T(" ")

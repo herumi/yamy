@@ -194,11 +194,10 @@ BOOL LayoutManager::wmNcHitTest(int i_x, int i_y)
 	GetClientRect(m_hwnd, &rc);
 	if (rc.right - GetSystemMetrics(SM_CXHTHUMB) <= p.x &&
 			rc.bottom - GetSystemMetrics(SM_CYVTHUMB) <= p.y) {
-#ifdef MAYU64
-		SetWindowLongPtr(m_hwnd, DWLP_MSGRESULT, HTBOTTOMRIGHT);
-#else
-		SetWindowLong(m_hwnd, DWL_MSGRESULT, HTBOTTOMRIGHT);
+#ifndef DWLP_MSGRESULT
+#define DWLP_MSGRESULT DWL_MSGRESULT
 #endif
+		SetWindowLongPtr(m_hwnd, DWLP_MSGRESULT, HTBOTTOMRIGHT);
 		return TRUE;
 	}
 	return FALSE;

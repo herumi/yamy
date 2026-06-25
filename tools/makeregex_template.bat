@@ -1,4 +1,20 @@
-#if _MSC_VER == 1500
+#if _MSC_VER >= 1940
+#define VC_VERSION vc143
+#elif _MSC_VER >= 1930
+#define VC_VERSION vc143
+#elif _MSC_VER >= 1920
+#define VC_VERSION vc142
+#elif _MSC_VER >= 1910
+#define VC_VERSION vc141
+#elif _MSC_VER == 1900
+#define VC_VERSION vc14
+#elif _MSC_VER == 1800
+#define VC_VERSION vc12
+#elif _MSC_VER == 1700
+#define VC_VERSION vc11
+#elif _MSC_VER == 1600
+#define VC_VERSION vc10
+#elif _MSC_VER == 1500
 #define VC_VERSION vc9
 #elif _MSC_VER == 1400
 #define VC_VERSION vc8

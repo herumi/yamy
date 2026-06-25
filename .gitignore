@@ -3,3 +3,14 @@
 functions.h
 /Debug
 /Release
+
+# Visual Studio generated / per-user / build intermediates
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+/proj/Backup/
+/proj/UpgradeLog.htm
+/proj/Debug/
+/proj/Release/
+/proj/*/Debug/
+/proj/*/Release/

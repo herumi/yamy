@@ -265,7 +265,7 @@ bool notify(void *i_data, size_t i_dataSize)
 #ifdef MAYU64
 	DWORD_PTR result;
 #else  // MAYU64
-	DWORD result;
+	DWORD_PTR result;
 #endif // MAYU64
 
 	DWORD len;

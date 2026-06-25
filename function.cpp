@@ -2073,7 +2073,7 @@ void Engine::funcDirectSSTP(FunctionParam *i_param,
 #ifdef MAYU64
 			DWORD_PTR result;
 #else
-			DWORD result;
+			DWORD_PTR result;
 #endif
 			SendMessageTimeout(i->second.m_hwnd, WM_COPYDATA,
 							   reinterpret_cast<WPARAM>(m_hwndAssocWindow),
