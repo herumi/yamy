@@ -74,6 +74,20 @@ typedef unsigned long long u_int64;			/// unsigned 64bit
 #  endif // NDEBUG
 
 
+/// convert HWND to 32bit value for interprocess communication
+/// between 32bit and 64bit processes (window handles fit in 32bit)
+inline DWORD hwndToDword(HWND i_hwnd)
+{
+	return static_cast<DWORD>(reinterpret_cast<ULONG_PTR>(i_hwnd));
+}
+
+/// convert 32bit value to HWND (inverse of hwndToDword)
+inline HWND dwordToHwnd(DWORD i_hwnd)
+{
+	return reinterpret_cast<HWND>(static_cast<ULONG_PTR>(i_hwnd));
+}
+
+
 /// get number of array elements
 #  define NUMBER_OF(i_array) (sizeof(i_array) / sizeof((i_array)[0]))
 

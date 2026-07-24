@@ -987,13 +987,13 @@ void Engine::shellExecute()
 		reinterpret_cast<FunctionData_ShellExecute *>(
 			m_afShellExecute->m_functionData);
 
-	int r = (int)ShellExecute(
+	INT_PTR r = reinterpret_cast<INT_PTR>(ShellExecute(
 				NULL,
 				fd->m_operation.eval().empty() ? _T("open") : fd->m_operation.eval().c_str(),
 				fd->m_file.eval().empty() ? NULL : fd->m_file.eval().c_str(),
 				fd->m_parameters.eval().empty() ? NULL : fd->m_parameters.eval().c_str(),
 				fd->m_directory.eval().empty() ? NULL : fd->m_directory.eval().c_str(),
-				fd->m_showCommand);
+				fd->m_showCommand));
 	if (32 < r)
 		return; // success
 
@@ -1026,7 +1026,7 @@ void Engine::shellExecute()
 	};
 
 	tstring errorMessage(_T("Unknown error."));
-	getTypeName(&errorMessage, r, errorTable, NUMBER_OF(errorTable));
+	getTypeName(&errorMessage, static_cast<int>(r), errorTable, NUMBER_OF(errorTable));
 
 	Acquire b(&m_log, 0);
 	m_log << _T("error: ") << fd << _T(": ") << errorMessage << std::endl;
@@ -1105,7 +1105,7 @@ void Engine::funcLoadSetting(FunctionParam *i_param, const StrExprArg &i_name)
 
 		tregex split(_T("^([^;]*);([^;]*);(.*)$"));
 		tstringi dot_mayu;
-		for (size_t i = 0; i < MAX_MAYU_REGISTRY_ENTRIES; ++ i) {
+		for (int i = 0; i < MAX_MAYU_REGISTRY_ENTRIES; ++ i) {
 			_TCHAR buf[100];
 			_sntprintf(buf, NUMBER_OF(buf), _T(".mayu%d"), i);
 			if (!reg.read(buf, &dot_mayu))
@@ -1449,9 +1449,9 @@ static BOOL CALLBACK enumDisplayMonitorsForWindowMonitorTo(
 	ep.m_monitorinfos.push_back(mi);
 
 	if (mi.dwFlags & MONITORINFOF_PRIMARY)
-		ep.m_primaryMonitorIdx = ep.m_monitors.size() - 1;
+		ep.m_primaryMonitorIdx = static_cast<int>(ep.m_monitors.size()) - 1;
 	if (i_hmon == ep.m_hmon)
-		ep.m_currentMonitorIdx = ep.m_monitors.size() - 1;
+		ep.m_currentMonitorIdx = static_cast<int>(ep.m_monitors.size()) - 1;
 
 	return TRUE;
 }
@@ -1608,7 +1608,7 @@ void Engine::funcWindowIdentify(FunctionParam *i_param)
 			{
 				Acquire a(&m_log, 1);
 				m_log << _T("HWND:\t") << std::hex
-				<< reinterpret_cast<int>(i_param->m_hwnd)
+				<< hwndToDword(i_param->m_hwnd)
 				<< std::dec << std::endl;
 			}
 			Acquire a(&m_log, 0);
@@ -1907,7 +1907,7 @@ void Engine::funcSetImeString(FunctionParam *i_param, const StrExprArg &i_data)
 		DisconnectNamedPipe(m_hookPipe);
 		ConnectNamedPipe(m_hookPipe, NULL);
 		error = WriteFile(m_hookPipe, i_data.eval().c_str(),
-						  i_data.eval().size() * sizeof(_TCHAR),
+						  static_cast<DWORD>(i_data.eval().size() * sizeof(_TCHAR)),
 						  &len, NULL);
 
 		//FlushFileBuffers(m_hookPipe);
@@ -1961,7 +1961,7 @@ public:
 			(*m_directSSTPServers)[id].m_path = value;
 		else if (member == _T("hwnd"))
 			(*m_directSSTPServers)[id].m_hwnd =
-				reinterpret_cast<HWND>(_ttoi(value.c_str()));
+				reinterpret_cast<HWND>(static_cast<INT_PTR>(_ttoi(value.c_str())));
 		else if (member == _T("name"))
 			(*m_directSSTPServers)[id].m_name = value;
 		else if (member == _T("keroname"))
@@ -2043,7 +2043,7 @@ void Engine::funcDirectSSTP(FunctionParam *i_param,
 
 	_TCHAR buf[100];
 	_sntprintf(buf, NUMBER_OF(buf), _T("HWnd: %d\r\n"),
-			   reinterpret_cast<int>(m_hwndAssocWindow));
+			   static_cast<int>(reinterpret_cast<INT_PTR>(m_hwndAssocWindow)));
 	request += buf;
 
 #ifdef _UNICODE
@@ -2065,10 +2065,10 @@ void Engine::funcDirectSSTP(FunctionParam *i_param,
 			COPYDATASTRUCT cd;
 			cd.dwData = 9801;
 #ifdef _UNICODE
-			cd.cbData = request_UTF_8.size();
+			cd.cbData = static_cast<DWORD>(request_UTF_8.size());
 			cd.lpData = (void *)request_UTF_8.c_str();
 #else
-			cd.cbData = request.size();
+			cd.cbData = static_cast<DWORD>(request.size());
 			cd.lpData = (void *)request.c_str();
 #endif
 #ifdef MAYU64
@@ -2240,7 +2240,7 @@ void Engine::funcMouseHook(FunctionParam *i_param,
 			target = i_param->m_hwnd;
 
 		g_hookData->m_hwndMouseHookTarget =
-			reinterpret_cast<DWORD>(getToplevelWindow(target, &isMDI));
+			hwndToDword(getToplevelWindow(target, &isMDI));
 		break;
 		default:
 			g_hookData->m_hwndMouseHookTarget = NULL;

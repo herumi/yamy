@@ -5,11 +5,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>18.0.11909.267</_ProjectFileVersion>
+    <TargetName>yamy$(CPUBIT)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
       <AdditionalDependencies>imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)yamy$(CPUBIT).dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

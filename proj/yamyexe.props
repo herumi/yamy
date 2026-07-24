@@ -5,11 +5,14 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>18.0.11909.267</_ProjectFileVersion>
+    <!-- yamy32/yamy64 are launched by yamy.exe via CreateProcess with an
+         extensionless path, so the executables are built without ".exe" -->
+    <TargetExt></TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
       <AdditionalDependencies>comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName)</OutputFile>
+      <OutputFile>$(OutDir)$(TargetName)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
