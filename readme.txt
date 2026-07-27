@@ -1,4 +1,4 @@
-Yet Another Mado tsukai no Yuutsu(YAMY) ver.0.03
+Yet Another Mado tsukai no Yuutsu(YAMY) ver.0.04
 
 1. 概要
 
@@ -213,7 +213,7 @@ One Shotモディファイアに指定しているキーを離した際にPrefix
 
 3.4. その他
 
-* インストーラはありません。yamy-0.03.zip を任意のフォルダに展開し、
+* インストーラはありません。yamy-*.zip を任意のフォルダに展開し、
   yamy.exe を実行して下さい。
 
 * レジストリではなく、yamy.exe と同じフォルダにある yamy.ini に
@@ -250,29 +250,11 @@ One Shotモディファイアに指定しているキーを離した際にPrefix
 
 5. ビルド方法
 
-Visual Studio 2008 Professional + Windows SDK v6.1で確認しています。
-yamyのビルドにはx64用コンパイラが必要になりますが、Visual Studio 2008
-の既定のインストールではインストールされませんので追加でインストール
-する必要があります。
+Visual Studio 2026 Professionalで確認しています。
 
-5.1.
-yamy と boost_1_38_0 のソースを入手し、以下の配置にて展開します。
-
-./
-   |
-   +---boost_1_38_0/ ... http://www.boost.org/ から入手したアーカイブを展開
-   |
-   +---yamy/ ... "git clone git://git.sourceforge.jp/gitroot/yamy/yamy.git"等により展開
-       |
-       +---proj/ ...
-       +---tools/ ...
-
-5.2.
-yamy/proj/yamy.sln を Visual Studio で開き、ソリューションをビルドします。
-
-5.3.
-yamy/{Debug,Release}/ 以下にバイナリと zip パッケージが生成されます。
-
+Visual Studio 2026のコマンドプロンプトを開きyamy/フォルダに移動し、
+mk-dist.batを実行するとyamy-*.zipが生成されます。
+バージョンはproj/yamy.propsに記されたものが利用されます。
 
 6. 著作権・ライセンス
 
@@ -355,7 +337,7 @@ YAMYの派生元である「窓使いの憂鬱」の著作権・ライセンス�
 2026/07/24 ver.0.04
 * Visual Studio 2026対応
   - boost::regexをstd::regexに変更
-  - waringの除去
+  - warningの除去
   - 自動zip化
   - by @herumi
 
