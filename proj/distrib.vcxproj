@@ -127,7 +127,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\readme.txt">
+    <CustomBuild Include="..\readme.md">
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">copy /Y %(FullPath) $(OutDir)%(Filename)%(Extension)
 </Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)%(Filename)%(Extension);%(Outputs)</Outputs>
