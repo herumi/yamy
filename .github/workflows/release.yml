@@ -1,0 +1,66 @@
+name: Release
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "release-${{ github.ref }}"
+  cancel-in-progress: true
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Create release branch
+        shell: bash
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout release 2>/dev/null || git checkout -b release
+          git merge origin/main -m "chore(git): merged latest main"
+          git push --set-upstream origin release
+
+      - name: Get version from proj/yamy.props
+        shell: bash
+        run: |
+          VERSION=$(sed -n 's/.*<VERSION>"\([^"]*\)".*/\1/p' proj/yamy.props)
+          if [ -z "$VERSION" ]; then
+            echo "failed to get VERSION from proj/yamy.props"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build and create zip
+        shell: cmd
+        run: call mk-dist.bat
+
+      - name: Commit zip to release branch
+        shell: bash
+        run: |
+          git add -f "yamy-${{ env.VERSION }}.zip"
+          changes=$(git diff --staged --numstat | wc -l)
+          if [ "$changes" -gt 0 ]; then
+            git commit -m "fix(release): add yamy-${{ env.VERSION }}.zip"
+            git push
+          fi
+
+      - name: Create Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          gh release create "v${{ env.VERSION }}"
+          "yamy-${{ env.VERSION }}.zip"
+          -t "v${{ env.VERSION }}"
+          --target release --latest
