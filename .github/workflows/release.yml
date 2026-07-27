@@ -48,6 +48,11 @@ jobs:
       - name: Commit zip to release branch
         shell: bash
         run: |
+          for f in yamy-*.zip; do
+            if [ "$f" != "yamy-${{ env.VERSION }}.zip" ]; then
+              git rm -q --ignore-unmatch "$f"
+            fi
+          done
           git add -f "yamy-${{ env.VERSION }}.zip"
           changes=$(git diff --staged --numstat | wc -l)
           if [ "$changes" -gt 0 ]; then
