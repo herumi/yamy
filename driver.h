@@ -5,16 +5,7 @@
 #ifndef _DRIVER_H
 #  define _DRIVER_H
 
-#  include <winioctl.h>
-
-
-/// mayu device file name
-#    define MAYU_DEVICE_FILE_NAME _T("\\\\.\\MayuDetour1")
-///
-#    define MAYU_DRIVER_NAME _T("mayud")
-
-/// Ioctl value
-#include "d/ioctl.h"
+#  include <windows.h>
 
 
 /// derived from w2kddk/inc/ntddkbd.h
