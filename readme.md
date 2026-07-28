@@ -1,5 +1,13 @@
 # Yet Another Mado tsukai no Yuutsu (YAMY) ver.0.04
 
+## 注意
+
+このサイトはオリジナルの「窓使いの憂鬱」をforkして開発された[YAMY](https://github.com/gimyd/yamy)のそのまたforkのサイトです。Visual Studio 2008 + boost::regex でbuildされていたYAMYをVisual Studio 2026のみでbuildできるようにしたものです。
+
+[releases](https://github.com/herumi/yamy/releases)で配布している実行ファイルは、素性が分かるように公開されているソースファイルを元に[GitHub Actions](https://github.com/herumi/yamy/blob/main/.github/workflows/release.yml)により自動生成しています。
+
+Windows 11で動作確認をしていますが、現在ダウンロード数が少なく、Windowsセキュリティでブロックされることがあります。使用は自己責任でお願いします。
+
 ## 概要
 
 Windows用汎用キーバインディング変更ソフト「[窓使いの憂鬱](http://mayu.sourceforge.net/)(以後mayuと表記)」のキー入力置換をドライバベースからユーザモードフックベースに変更した派生ソフトウェアです。既に開発を終了したmayuをforkすることにより、Windows Vista以降のOSのサポートを目指しています。
