@@ -836,7 +836,7 @@ private:
 			#endif
 				m_log << std::endl;
 		m_log << _T("  built by ")
-		<< _T(LOGNAME) << _T("@") << toLower(_T(COMPUTERNAME))
+		<< _T("herumi")
 		<< _T(" (") << _T(__DATE__) <<  _T(" ")
 		<< _T(__TIME__) << _T(", ")
 		<< getCompilerVersionString() << _T(")") << std::endl;

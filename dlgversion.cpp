@@ -47,7 +47,7 @@ public:
 #endif // !_UNICODE
 				   ,
 				   loadString(IDS_homepage).c_str(),
-				   (_T(LOGNAME) _T("@") + toLower(_T(COMPUTERNAME))).c_str(),
+				   _T("herumi"),
 				   _T(__DATE__) _T(" ") _T(__TIME__),
 				   getCompilerVersionString().c_str(),
 				   modulebuf);

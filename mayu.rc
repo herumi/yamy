@@ -13,12 +13,12 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// ⌠З√{▄Й resources
+// Ф≈╔Ф°╛Х╙· resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
 #ifdef _WIN32
 LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
-#pragma code_page(932)
+#pragma code_page(65001)
 #endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
@@ -28,95 +28,95 @@ LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
 
 IDD_DIALOG_investigate DIALOGEX 0, 0, 298, 51
 STYLE DS_MODALFRAME | DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "▓╡█╦ - YAMY"
+CAPTION "Х╙©Ф÷╩ - YAMY"
 FONT 9, "MS UI Gothic"
 BEGIN
     CONTROL         "scancode",IDC_CUSTOM_scancode,"mayuFocus",WS_TABSTOP,88,
                     18,20,20,WS_EX_CLIENTEDGE
-    LTEXT           "│╘┌╠┌л▓├┌е▓╡┌в┌╫┌╒┐L│[┌П⌠Э≈м┌╣┌д┌╜┌╬┌Ё┌╒",IDC_STATIC,
+    LTEXT           "Б├░Ц│⌠Ц│╝Д╦╜Ц│╖Х╙©Ц│╧Ц│÷Ц│└Ц┌╜Ц┐╪Ц┌▓Е┘╔Е┼⌡Ц│≈Ц│╕Ц│▐Ц│═Ц│∙Ц│└",IDC_STATIC,
                     112,16,44,27
-    GROUPBOX        "┴╪▒z┐L│[┌л▓╡█╦(&V)",IDC_STATIC,164,4,76,44
+    GROUPBOX        "Д╩╝Ф┐ЁЦ┌╜Ц┐╪Ц│╝Х╙©Ф÷╩(&V)",IDC_STATIC,164,4,76,44
     CONTROL         "vkey",IDC_CUSTOM_vkey,"mayuFocus",WS_TABSTOP,168,18,20,
                     20,WS_EX_CLIENTEDGE
-    LTEXT           "│╘┌╠┌л▓├┌е▓╡┌в┌╫┌╒┐L│[┌П⌠Э≈м┌╣┌д┌╜┌╬┌Ё┌╒",IDC_STATIC,
+    LTEXT           "Б├░Ц│⌠Ц│╝Д╦╜Ц│╖Х╙©Ц│╧Ц│÷Ц│└Ц┌╜Ц┐╪Ц┌▓Е┘╔Е┼⌡Ц│≈Ц│╕Ц│▐Ц│═Ц│∙Ц│└",IDC_STATIC,
                     192,16,44,27
-    DEFPUSHBUTTON   "∙б┌╤┌И",IDOK,244,32,50,14
-    GROUPBOX        "┐E┐B┐⌠┐h┐E┌л▓╡█╦(&W)",IDC_STATIC,4,4,76,44
+    DEFPUSHBUTTON   "И√┴Ц│≤Ц┌▀",IDOK,244,32,50,14
+    GROUPBOX        "Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕Ц│╝Х╙©Ф÷╩(&W)",IDC_STATIC,4,4,76,44
     CONTROL         "",IDC_CUSTOM_target,"mayuTarget",0x0,8,18,20,20,
                     WS_EX_CLIENTEDGE
-    LTEXT           "│╘┌П▓╡┌в┌╫┌╒┐E┐B┐⌠┐h┐E┌э┌е┐h┐┴┐b┐O┌╣┌д┌╜┌╬┌Ё┌╒",
+    LTEXT           "Б├░Ц┌▓Х╙©Ц│╧Ц│÷Ц│└Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕Ц│╬Ц│╖Ц┐┴Ц┐╘Ц┐┐Ц┌╟Ц│≈Ц│╕Ц│▐Ц│═Ц│∙Ц│└",
                     IDC_STATIC,32,17,44,27
-    GROUPBOX        "┐X┐L┐┐┐⌠┐R│[┐h┌л▓╡█╦(&S)",IDC_STATIC,84,4,76,44
+    GROUPBOX        "Ц┌╧Ц┌╜Ц┐ёЦ┐ЁЦ┌ЁЦ┐╪Ц┐┴Ц│╝Х╙©Ф÷╩(&S)",IDC_STATIC,84,4,76,44
 END
 
 IDD_DIALOG_setting DIALOGEX 0, 0, 302, 135
 STYLE DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "░щ▓Х - YAMY"
+CAPTION "Х╗╜Е╝  - YAMY"
 FONT 9, "MS UI Gothic"
 BEGIN
-    GROUPBOX        "░щ▓Х┐t┐@┐C┐▀√╪┐┼┐X┐g(&L)",IDC_STATIC_mayuPaths,4,4,296,
+    GROUPBOX        "Х╗╜Е╝ Ц┐∙Ц┌║Ц┌╓Ц┐╚Е░█Ц┐╙Ц┌╧Ц┐┬(&L)",IDC_STATIC_mayuPaths,4,4,296,
                     108
-    CONTROL         "List1",IDC_LIST_mayuPaths,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | 
+    CONTROL         "List1",IDC_LIST_mayuPaths,"SysListView32",LVS_REPORT |
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP |
                     WS_BORDER | WS_TABSTOP,8,16,268,72
-    PUSHBUTTON      "│╙",IDC_BUTTON_up,280,36,14,14
-    PUSHBUTTON      "│╚",IDC_BUTTON_down,280,52,14,14
-    PUSHBUTTON      "▓г┴а(&A)",IDC_BUTTON_add,66,92,50,14
-    PUSHBUTTON      "∙р▐W(&E)",IDC_BUTTON_edit,126,92,50,14
-    PUSHBUTTON      "█М▐°(&D)",IDC_BUTTON_delete,186,92,50,14
-    PUSHBUTTON      "┐L┐┐┐⌠┐Z┐▀",IDCANCEL,156,116,50,14
+    PUSHBUTTON      "Б├▒",IDC_BUTTON_up,280,36,14,14
+    PUSHBUTTON      "Б├⌠",IDC_BUTTON_down,280,52,14,14
+    PUSHBUTTON      "Х©╫Е┼═(&A)",IDC_BUTTON_add,66,92,50,14
+    PUSHBUTTON      "Г╥╗И⌡├(&E)",IDC_BUTTON_edit,126,92,50,14
+    PUSHBUTTON      "Е┴┼И≥╓(&D)",IDC_BUTTON_delete,186,92,50,14
+    PUSHBUTTON      "Ц┌╜Ц┐ёЦ┐ЁЦ┌╩Ц┐╚",IDCANCEL,156,116,50,14
     DEFPUSHBUTTON   "OK",IDOK,96,116,50,14
 END
 
 IDD_DIALOG_log DIALOGEX 0, 0, 250, 62
-STYLE DS_CENTERMOUSE | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+STYLE DS_CENTERMOUSE | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU |
     WS_THICKFRAME
-CAPTION "┐█┐O - YAMY"
+CAPTION "Ц┐╜Ц┌╟ - YAMY"
 FONT 9, "MS UI Gothic"
 BEGIN
-    DEFPUSHBUTTON   "∙б┌╤┌И(&C)",IDOK,192,44,50,15
-    EDITTEXT        IDC_EDIT_log,0,0,250,40,ES_MULTILINE | ES_AUTOVSCROLL | 
-                    ES_AUTOHSCROLL | ES_NOHIDESEL | ES_READONLY | 
+    DEFPUSHBUTTON   "И√┴Ц│≤Ц┌▀(&C)",IDOK,192,44,50,15
+    EDITTEXT        IDC_EDIT_log,0,0,250,40,ES_MULTILINE | ES_AUTOVSCROLL |
+                    ES_AUTOHSCROLL | ES_NOHIDESEL | ES_READONLY |
                     ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
-    PUSHBUTTON      "┐█┐O┌л┐N┐┼┐A(&L)",IDC_BUTTON_clearLog,4,44,69,15,0,
+    PUSHBUTTON      "Ц┐╜Ц┌╟Ц│╝Ц┌╞Ц┐╙Ц┌╒(&L)",IDC_BUTTON_clearLog,4,44,69,15,0,
                     WS_EX_CLIENTEDGE
-    PUSHBUTTON      "┐t┐H┐⌠┐g┌л∙о█X(&F)...",IDC_BUTTON_changeFont,76,44,69,
+    PUSHBUTTON      "Ц┐∙Ц┌╘Ц┐ЁЦ┐┬Ц│╝Е╓┴Ф⌡╢(&F)...",IDC_BUTTON_changeFont,76,44,69,
                     15,0,WS_EX_CLIENTEDGE
-    CONTROL         "▐з█в(&D)",IDC_CHECK_detail,"Button",BS_AUTOCHECKBOX | 
+    CONTROL         "Х╘ЁГ╢╟(&D)",IDC_CHECK_detail,"Button",BS_AUTOCHECKBOX |
                     WS_TABSTOP,149,47,39,10
 END
 
 IDD_DIALOG_version DIALOG DISCARDABLE  0, 0, 244, 180
 STYLE DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "┐o│[┐W┐┤┐⌠▐Н∙Я - YAMY"
+CAPTION "Ц┐░Ц┐╪Ц┌╦Ц┐╖Ц┐ЁФ┐┘Е═╠ - YAMY"
 FONT 9, "MS UI Gothic"
 BEGIN
-    DEFPUSHBUTTON   "∙б┌╤┌И",IDOK,136,160,50,14
-    PUSHBUTTON      "█е░V┐o│[┐W┐┤┐⌠┌л┐_┐E┐⌠┐█│[┐h(&D)",IDC_BUTTON_download,
+    DEFPUSHBUTTON   "И√┴Ц│≤Ц┌▀",IDOK,136,160,50,14
+    PUSHBUTTON      "Ф°─Ф√╟Ц┐░Ц┐╪Ц┌╦Ц┐╖Ц┐ЁЦ│╝Ц┐─Ц┌╕Ц┐ЁЦ┐╜Ц┐╪Ц┐┴(&D)",IDC_BUTTON_download,
                     32,160,100,14
     ICON            IDI_ICON_mayu,IDC_STATIC_mayuIcon,8,20,20,20
-    EDITTEXT        IDC_EDIT_builtBy,32,8,204,144,ES_MULTILINE | 
+    EDITTEXT        IDC_EDIT_builtBy,32,8,204,144,ES_MULTILINE |
                     ES_AUTOVSCROLL | ES_READONLY | NOT WS_BORDER
 END
 
 IDD_DIALOG_editSetting DIALOG DISCARDABLE  0, 0, 254, 75
 STYLE DS_CENTERMOUSE | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
-CAPTION "░щ▓Х┌л∙р▐W - YAMY"
+CAPTION "Х╗╜Е╝ Ц│╝Г╥╗И⌡├ - YAMY"
 FONT 9, "MS UI Gothic"
 BEGIN
-    LTEXT           "√╪▒O(&N)",IDC_STATIC_mayuPathName,8,7,36,8
+    LTEXT           "Е░█Е┴█(&N)",IDC_STATIC_mayuPathName,8,7,36,8
     EDITTEXT        IDC_EDIT_mayuPathName,44,4,152,14,ES_AUTOHSCROLL
-    LTEXT           "(┐Z┐~┐R┐█┐⌠∙s┴б)",IDC_STATIC_mayuPathNameComment,200,6,
+    LTEXT           "(Ц┌╩Ц┐÷Ц┌ЁЦ┐╜Ц┐ЁД╦█Е▐╞)",IDC_STATIC_mayuPathNameComment,200,6,
                     44,8
-    LTEXT           "┐t┐@┐C┐▀√╪(&F)",IDC_STATIC_mayuPath,8,22,36,8
+    LTEXT           "Ц┐∙Ц┌║Ц┌╓Ц┐╚Е░█(&F)",IDC_STATIC_mayuPath,8,22,36,8
     EDITTEXT        IDC_EDIT_mayuPath,44,20,152,14,ES_AUTOHSCROLL
-    PUSHBUTTON      "▌Q▐ф(&B)",IDC_BUTTON_browse,200,20,50,14
-    LTEXT           "┐V┐⌠┐{┐▀(&S)",IDC_STATIC_symbols,8,38,36,8
+    PUSHBUTTON      "Е▐┌Г┘╖(&B)",IDC_BUTTON_browse,200,20,50,14
+    LTEXT           "Ц┌╥Ц┐ЁЦ┐°Ц┐╚(&S)",IDC_STATIC_symbols,8,38,36,8
     EDITTEXT        IDC_EDIT_symbols,44,36,152,14,ES_AUTOHSCROLL
-    LTEXT           "(-D ┌П∙t┌╞│A┐Z┐~┐R┐█┐⌠┌е▀Ф░ь┌И)",
+    LTEXT           "(-D Ц┌▓Д╩≤Ц│▒Ц─│Ц┌╩Ц┐÷Ц┌ЁЦ┐╜Ц┐ЁЦ│╖Е▄╨Е┬┤Ц┌▀)",
                     IDC_STATIC_symbolsComment,200,38,48,22
     DEFPUSHBUTTON   "OK",IDOK,76,56,50,14
-    PUSHBUTTON      "┐L┐┐┐⌠┐Z┐▀",IDCANCEL,132,56,50,14
+    PUSHBUTTON      "Ц┌╜Ц┐ёЦ┐ЁЦ┌╩Ц┐╚",IDCANCEL,132,56,50,14
 END
 
 
@@ -126,7 +126,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO DISCARDABLE
 BEGIN
     IDD_DIALOG_investigate, DIALOG
     BEGIN
@@ -175,26 +175,26 @@ END
 // Menu
 //
 
-IDR_MENU_tasktray MENU DISCARDABLE 
+IDR_MENU_tasktray MENU DISCARDABLE
 BEGIN
-    POPUP "┐^┐X┐N┐g┐▄┐C"
+    POPUP "Ц┌©Ц┌╧Ц┌╞Ц┐┬Ц┐╛Ц┌╓"
     BEGIN
-        MENUITEM "█д⌠г┌щ█·┌щ(&R)",              ID_MENUITEM_reload
-        POPUP "▒I▒П(&C)"
+        MENUITEM "Е├█Х╙╜Ц│©Х╬╪Ц│©(&R)",              ID_MENUITEM_reload
+        POPUP "И│╦Ф┼·(&C)"
         BEGIN
-            MENUITEM "(┐z│[┐─┐f┐B┐▄┐N┐g┐┼┌╘┌Г)",    ID_MENUITEM_reload
+            MENUITEM "(Ц┐⌡Ц┐╪Ц┐═Ц┐┤Ц┌ёЦ┐╛Ц┌╞Ц┐┬Ц┐╙Ц│▀Ц┌┴)",    ID_MENUITEM_reload
         END
-        MENUITEM "░щ▓Х(&S)...",                 ID_MENUITEM_setting
+        MENUITEM "Х╗╜Е╝ (&S)...",                 ID_MENUITEM_setting
         MENUITEM SEPARATOR
-        MENUITEM "┬Й▌·▓Б▌~(&T)",                ID_MENUITEM_disable
+        MENUITEM "Д╦─Ф≥┌Е│°Ф╜╒(&T)",                ID_MENUITEM_disable
         MENUITEM SEPARATOR
-        MENUITEM "▓╡█╦(&I)...",                 ID_MENUITEM_investigate
-        MENUITEM "┐█┐O(&L)...",                 ID_MENUITEM_log
-        MENUITEM "┐`┐F┐b┐N(&C)...",             ID_MENUITEM_check
-        MENUITEM "┐o│[┐W┐┤┐⌠(&V)...",           ID_MENUITEM_version
-        MENUITEM "┐w┐▀┐v(&H)...",               ID_MENUITEM_help
+        MENUITEM "Х╙©Ф÷╩(&I)...",                 ID_MENUITEM_investigate
+        MENUITEM "Ц┐╜Ц┌╟(&L)...",                 ID_MENUITEM_log
+        MENUITEM "Ц┐│Ц┌╖Ц┐┐Ц┌╞(&C)...",             ID_MENUITEM_check
+        MENUITEM "Ц┐░Ц┐╪Ц┌╦Ц┐╖Ц┐Ё(&V)...",           ID_MENUITEM_version
+        MENUITEM "Ц┐≤Ц┐╚Ц┐≈(&H)...",               ID_MENUITEM_help
         MENUITEM SEPARATOR
-        MENUITEM "▐I≈╧(&X)",                    ID_MENUITEM_quit
+        MENUITEM "Г╣┌Д╨├(&X)",                    ID_MENUITEM_quit
     END
 END
 
@@ -205,18 +205,18 @@ END
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE DISCARDABLE 
+1 TEXTINCLUDE DISCARDABLE
 BEGIN
     "mayurc.h\0"
 END
 
-2 TEXTINCLUDE DISCARDABLE 
+2 TEXTINCLUDE DISCARDABLE
 BEGIN
     "#include ""winresrc.h""\r\n"
     "\0"
 END
 
-3 TEXTINCLUDE DISCARDABLE 
+3 TEXTINCLUDE DISCARDABLE
 BEGIN
     "\r\n"
     "\0"
@@ -230,54 +230,54 @@ END
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_mayu                "YAMY"
-    IDS_mayuAlreadyExists   "┼Ы┌и▒▀▌g┌╒┌л≈J÷T┌э┌╫┌мYAMY┌╙⌠╝█Л▓├┌е┌╥"
-    IDS_cannotOpenDevice    "YAMY┐f┐o┐C┐X┐h┐┴┐C┐o┌╙≈≤≈p┌е┌╚┌э┌╧┌Я"
-    IDS_driverNotInstalled  "YAMY┐f┐o┐C┐X┐h┐┴┐C┐o┌╙░Ё┌╣┌╜┐C┐⌠┐X┐g│[┐▀┌Ё┌Й┌д┌╒┌э┌╧┌Я"
-    IDS_executedInRemoteDesktop  "YAMY┌м┌Х┐┌│[┐g┐f┐X┐N┐g┐b┐v▐Ц┌е┌м▌ю█s┌е┌╚┌э┌╧┌Я"
-    IDS_openMayu            "░щ▓Х┐t┐@┐C┐▀┌П▓T┌╥ - YAMY"
-    IDS_openMayuFilter      "YAMY┐t┐@┐C┐▀ (*.mayu) |*.mayu|▒S┌д┌л┐t┐@┐C┐▀|*|"
+    IDS_mayuAlreadyExists   "Ф≈╒Ц│╚Г╙⌠Д╫©Ц│└Ц│╝Ф├┌И╛╠Ц│╬Ц│÷Ц│╞YAMYЦ│▄Е▀∙Д╫°Д╦╜Ц│╖Ц│≥"
+    IDS_cannotOpenDevice    "YAMYЦ┐┤Ц┐░Ц┌╓Ц┌╧Ц┐┴Ц┐╘Ц┌╓Ц┐░Ц│▄Е┬╘Г■╗Ц│╖Ц│█Ц│╬Ц│⌡Ц┌⌠"
+    IDS_driverNotInstalled  "YAMYЦ┐┤Ц┐░Ц┌╓Ц┌╧Ц┐┴Ц┐╘Ц┌╓Ц┐░Ц│▄Ф╜ёЦ│≈Ц│▐Ц┌╓Ц┐ЁЦ┌╧Ц┐┬Ц┐╪Ц┐╚Ц│∙Ц┌▄Ц│╕Ц│└Ц│╬Ц│⌡Ц┌⌠"
+    IDS_executedInRemoteDesktop  "YAMYЦ│╞Ц┌┼Ц┐╒Ц┐╪Ц┐┬Ц┐┤Ц┌╧Ц┌╞Ц┐┬Ц┐┐Ц┐≈Д╦┼Ц│╖Ц│╞Е╝÷Х║▄Ц│╖Ц│█Ц│╬Ц│⌡Ц┌⌠"
+    IDS_openMayu            "Х╗╜Е╝ Ц┐∙Ц┌║Ц┌╓Ц┐╚Ц┌▓Ф▌╒Ц│≥ - YAMY"
+    IDS_openMayuFilter      "YAMYЦ┐∙Ц┌║Ц┌╓Ц┐╚ (*.mayu) |*.mayu|Е┘╗Ц│╕Ц│╝Ц┐∙Ц┌║Ц┌╓Ц┐╚|*|"
     IDS_helpFilename        "doc\\README-ja.html"
-    IDS_mayuFile            "YAMY┐t┐@┐C┐▀"
+    IDS_mayuFile            "YAMYЦ┐∙Ц┌║Ц┌╓Ц┐╚"
     IDS_mayuShellOpen       "notepad.exe ""%1"""
-    IDS_readFromHomeDirectory "(┐z│[┐─┐f┐B┐▄┐N┐g┐┼┌╘┌Г)"
-    IDS_cannotInvoke        "%s ┌П▀N⌠╝┌е┌╚┌э┌╧┌Я(0x%08x)"
-    IDS_cannotPermitStandardUser "∙W▐─┐├│[┐U┌ж┌л▀√┴б┌и▌╦■s┌╣┌э┌╣┌╫(┐G┐┴│[┐R│[┐h=%d)"
-    IDS_escapeNlsKeysFailed "NLS┐L│[┌л┐G┐X┐P│[┐v┌и▌╦■s┌╣┌э┌╣┌╫(┐G┐┴│[┐R│[┐h=%d)"
-    IDS_escapeNlsKeysRetry  "NLS┐L│[┌л┐G┐X┐P│[┐v┌и▌╦■s┌╣┌э┌╣┌╫(┐G┐┴│[┐R│[┐h=%d) █д▌▌█s┌╣┌э┌╥┌╘│H"
+    IDS_readFromHomeDirectory "(Ц┐⌡Ц┐╪Ц┐═Ц┐┤Ц┌ёЦ┐╛Ц┌╞Ц┐┬Ц┐╙Ц│▀Ц┌┴)"
+    IDS_cannotInvoke        "%s Ц┌▓Х╣╥Е▀∙Ц│╖Ц│█Ц│╬Ц│⌡Ц┌⌠(0x%08x)"
+    IDS_cannotPermitStandardUser "Ф╗≥Ф╨√Ц┐╕Ц┐╪Ц┌╤Ц│╦Ц│╝Х╗╠Е▐╞Ц│╚Е╓╠Ф∙≈Ц│≈Ц│╬Ц│≈Ц│÷(Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴=%d)"
+    IDS_escapeNlsKeysFailed "NLSЦ┌╜Ц┐╪Ц│╝Ц┌╗Ц┌╧Ц┌╠Ц┐╪Ц┐≈Ц│╚Е╓╠Ф∙≈Ц│≈Ц│╬Ц│≈Ц│÷(Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴=%d)"
+    IDS_escapeNlsKeysRetry  "NLSЦ┌╜Ц┐╪Ц│╝Ц┌╗Ц┌╧Ц┌╠Ц┐╪Ц┐≈Ц│╚Е╓╠Ф∙≈Ц│≈Ц│╬Ц│≈Ц│÷(Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴=%d) Е├█Х╘╕Х║▄Ц│≈Ц│╬Ц│≥Ц│▀О╪÷"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_logFont             "-13,0,0,0,400,0,0,0,128,1,2,1,1,Terminal"
-    IDS_109Emacs            "⌠З√{▄Й 109 ┐L│[┐{│[┐h (Emacs ∙≈)"
-    IDS_104on109Emacs       "⌠З√{▄Й 109 ┐L│[┐{│[┐h (104 ∙≈, Emacs ∙≈)"
-    IDS_109                 "⌠З√{▄Й 109 ┐L│[┐{│[┐h"
-    IDS_104on109            "⌠З√{▄Й 109 ┐L│[┐{│[┐h (104 ∙≈)"
-    IDS_104Emacs            "┴p▄Й 104 ┐L│[┐{│[┐h (Emacs ∙≈)"
-    IDS_109on104Emacs       "┴p▄Й 104 ┐L│[┐{│[┐h (109 ∙≈, Emacs ∙≈)"
-    IDS_104                 "┴p▄Й 104 ┐L│[┐{│[┐h"
-    IDS_109on104            "┴p▄Й 104 ┐L│[┐{│[┐h (109 ∙≈)"
-    IDS_mayuPathName        "√╪▒O"
-    IDS_mayuPath            "░щ▓Х┐t┐@┐C┐▀√╪"
-    IDS_mayuSymbols         "┐V┐⌠┐{┐▀"
-    IDS_version             "YAMY %s\r\n  %s\r\n\r\nCopyright (C) 2009,\r\n  KOBAYASHI Yoshiaki <gimy@users.sourceforge.jp>\r\n\r\nbuilt by %s\r\n  %s\r\n  %s\r\n\r\n  %s\r\n\r\nThis program derived from\r\n  ▒▀▌g┌╒┌л≈J÷T\r\n    http://mayu.sourceforge.net/\r\n  Copyright (C) 1999-2005,  \r\n    TAGA Nayuta <nayuta@users.sourceforge.net>"
-    IDS_homepage            "http://yamy.sourceforge.jp/"
+    IDS_109Emacs            "Ф≈╔Ф°╛Х╙· 109 Ц┌╜Ц┐╪Ц┐°Ц┐╪Ц┐┴ (Emacs И╒╗)"
+    IDS_104on109Emacs       "Ф≈╔Ф°╛Х╙· 109 Ц┌╜Ц┐╪Ц┐°Ц┐╪Ц┐┴ (104 И╒╗, Emacs И╒╗)"
+    IDS_109                 "Ф≈╔Ф°╛Х╙· 109 Ц┌╜Ц┐╪Ц┐°Ц┐╪Ц┐┴"
+    IDS_104on109            "Ф≈╔Ф°╛Х╙· 109 Ц┌╜Ц┐╪Ц┐°Ц┐╪Ц┐┴ (104 И╒╗)"
+    IDS_104Emacs            "Х▀╠Х╙· 104 Ц┌╜Ц┐╪Ц┐°Ц┐╪Ц┐┴ (Emacs И╒╗)"
+    IDS_109on104Emacs       "Х▀╠Х╙· 104 Ц┌╜Ц┐╪Ц┐°Ц┐╪Ц┐┴ (109 И╒╗, Emacs И╒╗)"
+    IDS_104                 "Х▀╠Х╙· 104 Ц┌╜Ц┐╪Ц┐°Ц┐╪Ц┐┴"
+    IDS_109on104            "Х▀╠Х╙· 104 Ц┌╜Ц┐╪Ц┐°Ц┐╪Ц┐┴ (109 И╒╗)"
+    IDS_mayuPathName        "Е░█Е┴█"
+    IDS_mayuPath            "Х╗╜Е╝ Ц┐∙Ц┌║Ц┌╓Ц┐╚Е░█"
+    IDS_mayuSymbols         "Ц┌╥Ц┐ЁЦ┐°Ц┐╚"
+    IDS_version             "YAMY %s\r\n  %s\r\n\r\nCopyright (C) 2009,\r\n  KOBAYASHI Yoshiaki\r\n\r\nbuilt by %s\r\n  %s\r\n  %s\r\n\r\n  %s\r\n\r\nThis program derived from\r\n  Г╙⌠Д╫©Ц│└Ц│╝Ф├┌И╛╠\r\n  Copyright (C) 1999-2005,  \r\n    TAGA Nayuta"
+    IDS_homepage            "https://github.com/herumi/yamy"
 END
 
-#endif    // ⌠З√{▄Й resources
+#endif    // Ф≈╔Ф°╛Х╙· resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ┴p▄Й (╠рь╤) resources
+// Х▀╠Х╙· (О╫╠О╬▓О╬≤О╫╤) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 #ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
-#pragma code_page(1252)
+#pragma code_page(65001)
 #endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
@@ -306,14 +306,14 @@ BEGIN
 END
 
 IDD_DIALOG_setting DIALOGEX 0, 0, 304, 135
-STYLE DS_CENTERMOUSE | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+STYLE DS_CENTERMOUSE | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP |
     WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 CAPTION "Setting - YAMY"
 FONT 8, "MS Sans Serif"
 BEGIN
     GROUPBOX        "Setting File &List",IDC_STATIC_mayuPaths,4,4,296,108
-    CONTROL         "List1",IDC_LIST_mayuPaths,"SysListView32",LVS_REPORT | 
-                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | 
+    CONTROL         "List1",IDC_LIST_mayuPaths,"SysListView32",LVS_REPORT |
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP |
                     WS_BORDER | WS_TABSTOP,8,16,268,72
     PUSHBUTTON      "&Up",IDC_BUTTON_up,280,36,14,14
     PUSHBUTTON      "&Dn",IDC_BUTTON_down,280,52,14,14
@@ -325,20 +325,20 @@ BEGIN
 END
 
 IDD_DIALOG_log DIALOGEX 0, 0, 243, 162
-STYLE DS_CENTERMOUSE | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+STYLE DS_CENTERMOUSE | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU |
     WS_THICKFRAME
 CAPTION "Log - YAMY"
 FONT 8, "MS Sans Serif"
 BEGIN
     DEFPUSHBUTTON   "&Close",IDOK,192,144,50,15
-    EDITTEXT        IDC_EDIT_log,0,0,244,140,ES_MULTILINE | ES_AUTOVSCROLL | 
-                    ES_AUTOHSCROLL | ES_NOHIDESEL | ES_READONLY | 
+    EDITTEXT        IDC_EDIT_log,0,0,244,140,ES_MULTILINE | ES_AUTOVSCROLL |
+                    ES_AUTOHSCROLL | ES_NOHIDESEL | ES_READONLY |
                     ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
     PUSHBUTTON      "Clear &Log",IDC_BUTTON_clearLog,4,144,69,15,0,
                     WS_EX_CLIENTEDGE
     PUSHBUTTON      "Choose &Font...",IDC_BUTTON_changeFont,76,144,69,15,0,
                     WS_EX_CLIENTEDGE
-    CONTROL         "&Details",IDC_CHECK_detail,"Button",BS_AUTOCHECKBOX | 
+    CONTROL         "&Details",IDC_CHECK_detail,"Button",BS_AUTOCHECKBOX |
                     WS_TABSTOP,149,147,39,10
 END
 
@@ -351,7 +351,7 @@ BEGIN
     PUSHBUTTON      "&Download The Latest Version",IDC_BUTTON_download,32,
                     160,100,14
     ICON            IDI_ICON_mayu,IDC_STATIC_mayuIcon,8,20,20,20
-    EDITTEXT        IDC_EDIT_builtBy,32,8,204,144,ES_MULTILINE | 
+    EDITTEXT        IDC_EDIT_builtBy,32,8,204,144,ES_MULTILINE |
                     ES_AUTOVSCROLL | ES_READONLY | NOT WS_BORDER
 END
 
@@ -380,7 +380,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO DISCARDABLE 
+GUIDELINES DESIGNINFO DISCARDABLE
 BEGIN
     IDD_DIALOG_investigate, DIALOG
     BEGIN
@@ -430,7 +430,7 @@ END
 // Menu
 //
 
-IDR_MENU_tasktray MENU DISCARDABLE 
+IDR_MENU_tasktray MENU DISCARDABLE
 BEGIN
     POPUP "TASK TRAY"
     BEGIN
@@ -477,7 +477,7 @@ IDC_CURSOR_target       CURSOR  DISCARDABLE     "r\\target.cur"
 // String Table
 //
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_mayu                "YAMY"
     IDS_mayuAlreadyExists   "Already MADO TSUKAI NO YUUTSU or YAMY is running."
@@ -496,7 +496,7 @@ BEGIN
     IDS_escapeNlsKeysRetry  "failed to escape NLS keys(error code=%d), retry?"
 END
 
-STRINGTABLE DISCARDABLE 
+STRINGTABLE DISCARDABLE
 BEGIN
     IDS_logFont             "-13,0,0,0,400,0,0,0,128,1,2,1,1,Terminal"
     IDS_109Emacs            "Japanese 109 Keyboard (Emacs Like)"
@@ -510,11 +510,11 @@ BEGIN
     IDS_mayuPathName        "Name"
     IDS_mayuPath            "Setting Filename"
     IDS_mayuSymbols         "Symbols"
-    IDS_version             "YAMY %s\r\n  %s\r\n\r\nCopyright (C) 2009,\r\n  KOBAYASHI Yoshiaki <gimy@users.sourceforge.jp>\r\n\r\nbuilt by %s\r\n  %s\r\n  %s\r\n\r\n  %s\r\n\r\nThis program derived from\r\n  MADO TSUKAI NO YUUTSU\r\n    http://mayu.sourceforge.net/\r\n  Copyright (C) 1999-2005,  \r\n    TAGA Nayuta <nayuta@users.sourceforge.net>"
-    IDS_homepage            "http://yamy.sourceforge.jp/"
+    IDS_version             "YAMY %s\r\n  %s\r\n\r\nCopyright (C) 2009,\r\n  KOBAYASHI Yoshiaki\r\n\r\nbuilt by %s\r\n  %s\r\n  %s\r\n\r\n  %s\r\n\r\nThis program derived from\r\n  MADO TSUKAI NO YUUTSU\r\n  Copyright (C) 1999-2005,  \r\n    TAGA Nayuta"
+    IDS_homepage            "https://github.com/herumi/yamy"
 END
 
-#endif    // ┴p▄Й (╠рь╤) resources
+#endif    // Х▀╠Х╙· (О╫╠О╬▓О╬≤О╫╤) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
