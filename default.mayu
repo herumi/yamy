@@ -225,7 +225,6 @@ window	MDI	/:MDIClient:/ : Global
 
 
 ## 窓使いの憂鬱 ...............................................................
-## http://mayu.sourceforge.net
 
 # 仮想キー調査ウィンドウでは全てデフォルト
 window	MayuInvestigate /mayu\.exe:#32770:mayuFocus$/ : KeymapDefault

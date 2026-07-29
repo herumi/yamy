@@ -748,7 +748,7 @@
 			
 		    <dd class="d3">
 			<div>
-			  <p>モディファイヤ <code>T-, TS-</code> のサポートを有効にします。別途 DLL(<code>sts4mayu.dll</code> または <code>cts4mayu.dll</code>)が必要です。インストールパッケージには同梱しておりませんので、<a href="http://mayu.sourceforge.net/test/ts4mayu/">ここ</a>から取得し、<code>mayu.exe</code> と同じディレクトリに置いて下さい。</p>
+			  <p>モディファイヤ <code>T-, TS-</code> のサポートを有効にします。別途 DLL(<code>sts4mayu.dll</code> または <code>cts4mayu.dll</code>)が必要です。インストールパッケージには同梱しておりませんので、入手して <code>mayu.exe</code> と同じディレクトリに置いて下さい。</p>
 			  
 			  <p>Synaptics のタッチパッドを使用する。 <code>sts4mayu.dll</code> が必要です。</p>
 			  <p class="sample">
@@ -1265,11 +1265,11 @@
 			  &nbsp;key M-C = &amp;ShellExecute("open", "C:/WINDOWS/system32/Control.exe", "sysdm.cpl",, ShowNormal)
 			  </p>
 			  
-			  <p>インターネットエクスプローラで「窓使いの憂鬱」のホームページを開く例:</p>
+			  <p>インターネットエクスプローラで yamy のホームページを開く例:</p>
 			  
 			  <p class="sample">
-			  &nbsp;key M-I = &amp;ShellExecute("open", "C:\\Program Files\\Internet Explorer\\iexplore.exe\", "http://mayu.sourceforge.net",, ShowNormal)<br>
-			  &nbsp;key M-H = &amp;ShellExecute("open", "http://mayu.sourceforge.net",,, ShowNormal)
+			  &nbsp;key M-I = &amp;ShellExecute("open", "C:\\Program Files\\Internet Explorer\\iexplore.exe\", "https://github.com/herumi/yamy",, ShowNormal)<br>
+			  &nbsp;key M-H = &amp;ShellExecute("open", "https://github.com/herumi/yamy",,, ShowNormal)
 			  </p>
 			  
 			  <p><code>flourish.mid</code> を演奏する例:</p>
@@ -1599,20 +1599,12 @@
 			    <dt class="h4">ソースの展開
 			    <dd class="d4">
 				<div>
-				  <p>SourfeForge の <a href="http://sourceforge.net/project/showfiles.php?group_id=5403">Download</a> から、ソースファイルをダウンロードします。ソースファイルの展開には Cygwin の tar を使うのが良いでしょう。
-				</div>
-			    <dt class="h4">cvs による取り寄せ
-			    <dd class="d4">
-				<div>
-				  <p>SourfeForge から cvs を使用して取り寄せることにより現在開発中で次のバージョンとなるはずのソースを入手することが出来ます。</p>
-				  <p class="sample">
-				  cvs -z 3 -d :pserver:anonymous@cvs1.sourceforge.net:/cvsroot/mayu checkout mayu
-				  </p>
+				  <p>GitHub の <a href="https://github.com/herumi/yamy">herumi/yamy</a> から、ソースファイルをダウンロードします。
 				</div>
 			    <dt class="h4">ディレクトリ構成
 			    <dd class="d4">
 				<div>
-				  <p>上記のどちらかの方法で「窓使いの憂鬱」本体のソースコードを展開後、Boost を展開します。最終的なディレクトリ構成が以下のようになるように展開してください。</p>
+				  <p>上記の方法で「窓使いの憂鬱」本体のソースコードを展開後、Boost を展開します。最終的なディレクトリ構成が以下のようになるように展開してください。</p>
 				  <p class="tree">
 				  ./<br>
 				  <code>&nbsp;&nbsp;&nbsp;|</code><br>
